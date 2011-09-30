@@ -1,0 +1,4 @@
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+317  [Thread-2] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
+317  [Thread-3] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
