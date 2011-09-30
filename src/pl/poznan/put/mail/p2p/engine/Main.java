@@ -25,16 +25,18 @@ public class Main {
         logger.info("Starting application, logger works.");
         final Object lock = new Object();
         final MailApplicationFactory factory = new MailApplicationFactory();
-        final int port = 9980;
-        final InetSocketAddress bootAddress = new InetSocketAddress("localhost", port);
+        final int port = 9990;
+        final InetSocketAddress bootAddress = new InetSocketAddress("192.168.2.104", port);
 
-        for(int i=0;i<3; i++) {
+        for(int i=0;i<4; i++) {
             final int icopy = i;
             Thread th = new Thread(new Runnable() {
 
                 public void run() {
                     MailApplication app = null;
                     try {
+                        if(icopy!=0)
+                            Thread.sleep(1000);
                         app = factory.createApplication(bootAddress, port+icopy);
                         app.boot(bootAddress);
                         if(icopy == 0) {

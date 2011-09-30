@@ -34,13 +34,13 @@ public class MailApplicationFactory {
 
 
     public MailApplication createApplication(InetSocketAddress bootaddress, int bindport) throws IOException, InterruptedException {
-
+        logger.trace("factoring mail application");
         // Generate the NodeIds Randomly
         NodeIdFactory nidFactory = new RandomNodeIdFactory(env);
 
         // construct the PastryNodeFactory, this is how we use rice.pastry.socket
         PastryNodeFactory factory = new SocketPastryNodeFactory(nidFactory, bindport, env);
-
+        
         // construct a node
         PastryNode node = factory.newNode();
 

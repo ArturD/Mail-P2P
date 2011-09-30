@@ -73,12 +73,12 @@ public class MailApplication implements Application {
 
   public MailApplication(PastryNode node, Environment env) {
     // We are only going to use one instance of this application on each PastryNode
-    this.endpoint = node.buildEndpoint(this, "myinstance");
     this.node = node;
     this.env = env;
 
     // the rest of the initialization code could go here
-    
+
+    this.endpoint = node.buildEndpoint(this, "myinstance");
     // now we can receive messages
     this.endpoint.register();
   }
@@ -87,7 +87,7 @@ public class MailApplication implements Application {
    * Called to route a message to the id
    */
   public void routeMyMsg(Id id) {
-    System.out.println(this+" sending to "+id);    
+    logger.info(this+" sending to "+id);
     Message msg = new MyMsg(endpoint.getId(), id);
     endpoint.route(id, msg, null);
   }
@@ -96,7 +96,7 @@ public class MailApplication implements Application {
    * Called to directly send a message to the nh
    */
   public void routeMyMsgDirect(NodeHandle nh) {
-    System.out.println(this+" sending direct to "+nh);    
+    logger.info(this+" sending direct to "+nh);
     Message msg = new MyMsg(endpoint.getId(), nh.getId());
     endpoint.route(null, msg, nh);
   }
@@ -105,7 +105,7 @@ public class MailApplication implements Application {
    * Called when we receive a message.
    */
   public void deliver(Id id, Message message) {
-    System.out.println(this+" received "+message);
+    logger.info(this+" received "+message);
   }
 
   /**
@@ -129,7 +129,7 @@ public class MailApplication implements Application {
   }
 
   public void boot(InetSocketAddress bootaddress){
-      logger.trace("boot " + bootaddress);
+      logger.info("boot " + bootaddress);
         node.boot(bootaddress);
   }
 
@@ -140,7 +140,7 @@ public class MailApplication implements Application {
   
 
   public void waitForConnection() throws IOException, InterruptedException {
-
+        logger.trace("waiting to join pastry");
         // the node may require sending several messages to fully boot into the ring
         synchronized (node) {
             while (!node.isReady() && !node.joinFailed()) {
@@ -153,6 +153,7 @@ public class MailApplication implements Application {
                 }
             }
         }
+        logger.trace("joined pastry");
   }
 
   public void sendRandomMessages(int count) {

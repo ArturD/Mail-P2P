@@ -2,3 +2,74 @@
 317  [Thread-2] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
 317  [Thread-3] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
 0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+20665 [Thread-0] ERROR pl.poznan.put.mail.p2p.engine.Main  - error in testing thread
+java.io.IOException: Could not join the FreePastry ring.  Reason:rice.pastry.JoinFailedException: Cannot join ring.  All bootstraps are faulty.[localhost/127.0.0.1:9980]
+	at pl.poznan.put.mail.p2p.engine.pastry.MailApplication.waitForConnection(MailApplication.java:152)
+	at pl.poznan.put.mail.p2p.engine.Main$1.run(Main.java:41)
+	at java.lang.Thread.run(Thread.java:679)
+20682 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+415  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+1021 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot localhost/127.0.0.1:9980
+1047 [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+21051 [Thread-0] ERROR pl.poznan.put.mail.p2p.engine.Main  - error in testing thread
+java.io.IOException: Could not join the FreePastry ring.  Reason:rice.pastry.JoinFailedException: Cannot join ring.  All bootstraps are faulty.[localhost/127.0.0.1:9980]
+	at pl.poznan.put.mail.p2p.engine.pastry.MailApplication.waitForConnection(MailApplication.java:152)
+	at pl.poznan.put.mail.p2p.engine.Main$1.run(Main.java:43)
+	at java.lang.Thread.run(Thread.java:679)
+21084 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+161  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+501  [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /127.0.0.1:9980
+516  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+20519 [Thread-0] ERROR pl.poznan.put.mail.p2p.engine.Main  - error in testing thread
+java.io.IOException: Could not join the FreePastry ring.  Reason:rice.pastry.JoinFailedException: Cannot join ring.  All bootstraps are faulty.[/127.0.0.1:9980]
+	at pl.poznan.put.mail.p2p.engine.pastry.MailApplication.waitForConnection(MailApplication.java:152)
+	at pl.poznan.put.mail.p2p.engine.Main$1.run(Main.java:43)
+	at java.lang.Thread.run(Thread.java:679)
+20531 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+79   [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+449  [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot a-pc/127.0.1.1:9990
+459  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+20463 [Thread-0] ERROR pl.poznan.put.mail.p2p.engine.Main  - error in testing thread
+java.io.IOException: Could not join the FreePastry ring.  Reason:rice.pastry.JoinFailedException: Cannot join ring.  All bootstraps are faulty.[a-pc/127.0.1.1:9990]
+	at pl.poznan.put.mail.p2p.engine.pastry.MailApplication.waitForConnection(MailApplication.java:152)
+	at pl.poznan.put.mail.p2p.engine.Main$1.run(Main.java:43)
+	at java.lang.Thread.run(Thread.java:679)
+20474 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.Main  - closing app
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+94   [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+663  [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9990
+664  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+666  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+0    [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - Starting application, logger works.
+75   [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+393  [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9990
+395  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+399  [Thread-0] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+1077 [Thread-1] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+1085 [Thread-3] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+1084 [Thread-2] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+1225 [Thread-1] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9990
+1235 [Thread-2] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9990
+1241 [Thread-3] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9990
+1402 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending to <0x155B7F..>
+1418 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> received MyMsg from <0x83C2E7..> to <0x155B7F..>
+2412 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending to <0x499AE7..>
+2438 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x50CA56..> received MyMsg from <0x83C2E7..> to <0x499AE7..>
+3414 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending to <0xD572A0..>
+3428 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x07D8C5..> received MyMsg from <0x83C2E7..> to <0xD572A0..>
+14427 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending direct to [SNH: <0x07D8C5..>//192.168.2.104:9993]
+14437 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x07D8C5..> received MyMsg from <0x83C2E7..> to <0x07D8C5..>
+15428 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending direct to [SNH: <0x41E4E6..>//192.168.2.104:9991]
+15436 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x41E4E6..> received MyMsg from <0x83C2E7..> to <0x41E4E6..>
+16429 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending direct to [SNH: <0x50CA56..>//192.168.2.104:9992]
+16441 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x50CA56..> received MyMsg from <0x83C2E7..> to <0x50CA56..>
+17431 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending direct to [SNH: <0x07D8C5..>//192.168.2.104:9993]
+17439 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x07D8C5..> received MyMsg from <0x83C2E7..> to <0x07D8C5..>
+18432 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending direct to [SNH: <0x41E4E6..>//192.168.2.104:9991]
+18439 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x41E4E6..> received MyMsg from <0x83C2E7..> to <0x41E4E6..>
+19436 [Thread-0] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x83C2E7..> sending direct to [SNH: <0x50CA56..>//192.168.2.104:9992]
+19443 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - MailApplication <0x50CA56..> received MyMsg from <0x83C2E7..> to <0x50CA56..>
