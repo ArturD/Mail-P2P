@@ -33,7 +33,7 @@ liability, whether in contract, strict liability, or tort (including negligence
 or otherwise) arising in any way out of the use of this software, even if 
 advised of the possibility of such damage.
 
-*******************************************************************************/ 
+ *******************************************************************************/
 /*
  * Created on Feb 15, 2005
  *
@@ -46,7 +46,6 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import pl.poznan.put.mail.p2p.engine.MyMsg;
 import rice.environment.Environment;
 import rice.p2p.commonapi.Application;
 import rice.p2p.commonapi.Endpoint;
@@ -55,6 +54,8 @@ import rice.p2p.commonapi.Message;
 import rice.p2p.commonapi.Node;
 import rice.p2p.commonapi.NodeHandle;
 import rice.p2p.commonapi.RouteMessage;
+import rice.p2p.past.Past;
+import rice.p2p.scribe.Scribe;
 import rice.pastry.NodeIdFactory;
 import rice.pastry.PastryNode;
 import rice.pastry.leafset.LeafSet;
@@ -66,80 +67,84 @@ import rice.pastry.standard.RandomNodeIdFactory;
  * @author Jeff Hoye
  */
 public class MailApplication implements Application {
-  private static final Logger logger = LogManager.getLogger(MailApplication.class);
-  protected final Endpoint endpoint;
-  private final PastryNode node;
-  private final Environment env;
 
-  public MailApplication(PastryNode node, Environment env) {
-    // We are only going to use one instance of this application on each PastryNode
-    this.node = node;
-    this.env = env;
+    private static final Logger logger = LogManager.getLogger(MailApplication.class);
+    protected final Endpoint endpoint;
+    private final PastryNode node;
+    private final Environment env;
+    private final Past past;
+    private final Scribe scribe;
 
-    // the rest of the initialization code could go here
+    public MailApplication(PastryNode node, Environment env, Past past, Scribe scribe) {
+        // We are only going to use one instance of this application on each PastryNode
+        this.node = node;
+        this.env = env;
+        this.past = past;
 
-    this.endpoint = node.buildEndpoint(this, "myinstance");
-    // now we can receive messages
-    this.endpoint.register();
-  }
+        // the rest of the initialization code could go here
 
-  /**
-   * Called to route a message to the id
-   */
-  public void routeMyMsg(Id id) {
-    logger.info(this+" sending to "+id);
-    Message msg = new MyMsg(endpoint.getId(), id);
-    endpoint.route(id, msg, null);
-  }
-  
-  /**
-   * Called to directly send a message to the nh
-   */
-  public void routeMyMsgDirect(NodeHandle nh) {
-    logger.info(this+" sending direct to "+nh);
-    Message msg = new MyMsg(endpoint.getId(), nh.getId());
-    endpoint.route(null, msg, nh);
-  }
-    
-  /**
-   * Called when we receive a message.
-   */
-  public void deliver(Id id, Message message) {
-    logger.info(this+" received "+message);
-  }
+        this.endpoint = node.buildEndpoint(this, "myinstance");
+        // now we can receive messages
+        this.scribe = scribe;
+        this.endpoint.register();
+    }
 
-  /**
-   * Called when you hear about a new neighbor.
-   * Don't worry about this method for now.
-   */
-  public void update(NodeHandle handle, boolean joined) {
-  }
-  
-  /**
-   * Called a message travels along your path.
-   * Don't worry about this method for now.
-   */
-  public boolean forward(RouteMessage message) {
-    return true;
-  }
-  
+    /**
+     * Called to route a message to the id
+     
+    public void routeMyMsg(Id id) {
+        logger.trace(this + " sending to " + id);
+        Message msg = new MyMsg(endpoint.getId(), id);
+        endpoint.route(id, msg, null);
+    }
+
+    /**
+     * Called to directly send a message to the nh
+     
+    public void routeMyMsgDirect(NodeHandle nh) {
+        logger.trace(this + " sending direct to " + nh);
+        Message msg = new MyMsg(endpoint.getId(), nh.getId());
+        endpoint.route(null, msg, nh);
+    }
+*/
+    /**
+     * Called when we receive a message.
+     */
+    public void deliver(Id id, Message message) {
+        logger.trace(this + " received " + message);
+    }
+
+    /**
+     * Called when you hear about a new neighbor.
+     */
+    public void update(NodeHandle handle, boolean joined) {
+        logger.trace("" + handle + " joined:" + joined);
+    }
+
+    /**
+     * Called a message travels along your path.
+     * Don't worry about this method for now.
+     */
+    public boolean forward(RouteMessage message) {
+        logger.trace("forwarding message" + message);
+        return true;
+    }
+
     @Override
-  public String toString() {
-    return "MailApplication "+endpoint.getId();
-  }
+    public String toString() {
+        return "MailApplication " + endpoint.getId();
+    }
 
-  public void boot(InetSocketAddress bootaddress){
-      logger.info("boot " + bootaddress);
+    public void boot(InetSocketAddress bootaddress) {
+        logger.trace("boot " + bootaddress);
         node.boot(bootaddress);
-  }
+    }
 
     public PastryNode getNode() {
         return node;
     }
 
-  
-
-  public void waitForConnection() throws IOException, InterruptedException {
+    public void waitForConnection() throws IOException, InterruptedException {
         logger.trace("waiting to join pastry");
         // the node may require sending several messages to fully boot into the ring
         synchronized (node) {
@@ -154,9 +159,13 @@ public class MailApplication implements Application {
             }
         }
         logger.trace("joined pastry");
-  }
+    }
 
-  public void sendRandomMessages(int count) {
+    public Scribe getScribe() {
+        return scribe;
+    }
+/*
+    public void sendRandomMessages(int count) {
         try {
             NodeIdFactory nidFactory = new RandomNodeIdFactory(env);
             // route 10 messages
@@ -188,6 +197,11 @@ public class MailApplication implements Application {
         } catch (InterruptedException ex) {
             logger.error("Error while sending random messages.", ex);
         }
-  }
+    }
+*/
+    
 
+    public Past getPast() {
+        return past;
+    }
 }
