@@ -20,38 +20,42 @@ import rice.p2p.past.PastException;
  */
 public class MailMessageHeaderListPastContent extends ContentHashPastContent {
     private static final Logger logger = LogManager.getLogger(MailMessageHeaderListPastContent.class);
-     private HashSet<MessageHeader> headers;
+     private HashSet<MessageHeader> toAdd;
+     private HashSet<MessageHeader> toRemove;
 
     public MailMessageHeaderListPastContent(Id myId, Id contentId, MailAddress to) {
         super(myId);
-        headers = new HashSet();
+        toAdd = new HashSet();
 
-        headers.add(new MessageHeader(contentId, to));
+        toAdd.add(new MessageHeader(contentId, to));
     }
 
     public MailMessageHeaderListPastContent(Id myId, HashSet<MessageHeader> headers) {
         super(myId);
-        this.headers = headers;
+        this.toAdd = headers;
     }
 
     public HashSet<MessageHeader> getHeaders() {
-        return headers;
+        return toAdd;
     }
 
     public void setHeaders(HashSet<MessageHeader> headers) {
-        this.headers = headers;
+        this.toAdd = headers;
     }
 
     @Override
     public String toString() {
-        return "MailMessageHeaderListPastContent{" + "headers=" + headers.size() + '}';
+        return "MailMessageHeaderListPastContent{" + "headers=" + toAdd.size() + '}';
     }
 
     @Override
     public PastContent checkInsert(Id id, PastContent existingContent) throws PastException {
         if(existingContent == null) return this;
+        logger.info("merging headers " + this + "  to  " + existingContent);
         HashSet set = ((MailMessageHeaderListPastContent)existingContent).getHeaders();
-        set.addAll(headers);
+        set.addAll(toAdd);
+        set.remove(((MailMessageHeaderListPastContent)existingContent).toRemove);
+        set.removeAll(toRemove);
         return new MailMessageHeaderListPastContent(id,  set);
     }
 

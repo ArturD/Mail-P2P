@@ -10,6 +10,8 @@ import org.apache.log4j.Logger;
 import pl.poznan.put.mail.p2p.engine.messages.Mail;
 import rice.p2p.commonapi.Id;
 import rice.p2p.past.ContentHashPastContent;
+import rice.p2p.past.PastContent;
+import rice.p2p.past.PastException;
 
 /**
  *
@@ -30,5 +32,13 @@ public class MailMessagePastContent extends ContentHashPastContent {
 
     public void setMail(Mail mail) {
         this.mail = mail;
+    }
+
+    @Override
+    public PastContent checkInsert(Id id, PastContent existingContent) throws PastException {
+        MailMessagePastContent existing = (MailMessagePastContent) existingContent;
+        if(existing.mail == null || mail == null)
+            return null;
+        return this;
     }
 }

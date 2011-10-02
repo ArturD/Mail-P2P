@@ -19,6 +19,7 @@ import pl.poznan.put.mail.p2p.engine.pastry.MailApplicationFactory;
 import pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContentFactory;
 import pl.poznan.put.mail.p2p.engine.services.FactoryException;
 import pl.poznan.put.mail.p2p.engine.services.MailService;
+import pl.poznan.put.mail.p2p.engine.services.NewMailListener;
 import pl.poznan.put.mail.p2p.engine.services.PastryMailService;
 import pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory;
 import rice.Continuation;
@@ -38,10 +39,22 @@ public class Main {
         PastryMailServiceFactory fac = new PastryMailServiceFactory(new MailAddress("me@me")
                 ,new InetSocketAddress("192.168.2.104", 9001));
         MailService ms = fac.create();
+        ms.addMailListener(new NewMailListener() {
+
+            public void onMail(Mail mail) {
+                logger.info("mail notification");
+                logger.info(mail);
+            }
+        });
+        //Thread.sleep(10000);
+        logger.info("sending mail");
+        ms.sendEmail(new Mail("hhh" + new Random().nextInt(), "ccc", new MailAddress("me@me"), new MailAddress("me@me")));
         logger.info("query for mails");
         Collection<Mail> mails = ms.reciveMessages().get();
+        logger.info("got " + mails.size() + "");
         logger.info(mails);
-        
+        //Thread.sleep(10000);
+        ms.destroy();
     }
 
     /**

@@ -46,7 +46,18 @@ public class MailMessagePastContentFactory {
 
         return new MessageAndHeader(content, header);
     }
+    public MessageAndHeader createRevoke(Id contentId, MailAddress to) {
+        MailMessagePastContent content = new MailMessagePastContent(
+                contentId
+                , null);
+        MailMessageHeaderListPastContent header =
+                new MailMessageHeaderListPastContent(
+                    idFactory.buildIdFromToString(to.toString())
+                    , content.getId()
+                    , content.getMail().getTo());
 
+        return new MessageAndHeader(content, header);
+    }
     public Id getIdFor(MailAddress address) {
         return idFactory.buildIdFromToString(address.toString());
     }

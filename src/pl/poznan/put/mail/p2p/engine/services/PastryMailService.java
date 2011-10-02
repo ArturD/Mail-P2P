@@ -10,10 +10,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import pl.poznan.put.mail.p2p.engine.messages.Mail;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -22,9 +19,9 @@ import pl.poznan.put.mail.p2p.engine.pastry.MailApplication;
 import pl.poznan.put.mail.p2p.engine.pastry.MailMessageHeaderListPastContent;
 import pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent;
 import pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContentFactory;
+import pl.poznan.put.mail.p2p.engine.pastry.MailScribeContent;
 import pl.poznan.put.mail.p2p.engine.pastry.MessageAndHeader;
 import pl.poznan.put.mail.p2p.engine.pastry.MessageHeader;
-import pl.poznan.put.mail.p2p.engine.services.MailStorringInterruptedException;
 import rice.Continuation;
 import rice.p2p.commonapi.Id;
 import rice.p2p.commonapi.NodeHandle;
@@ -33,8 +30,6 @@ import rice.p2p.scribe.Scribe;
 import rice.p2p.scribe.ScribeClient;
 import rice.p2p.scribe.ScribeContent;
 import rice.p2p.scribe.Topic;
-import rice.pastry.NodeIdFactory;
-import rice.pastry.commonapi.PastryIdFactory;
 
 /**
  *
@@ -47,7 +42,7 @@ public class PastryMailService implements MailService {
     private MailMessagePastContentFactory mailMessagePastContentFactory;
     private final MailAddress address;
     private final Map<Mail, Id> map = new ConcurrentHashMap<Mail, Id>();
-    private Set<NewMailListener> mailListener = new HashSet<NewMailListener>();
+    private final Set<NewMailListener> mailListeners = new HashSet<NewMailListener>();
     private final MailNotificationTopicFactory topicFactory;
 
     public PastryMailService(MailApplication mailApplication,
@@ -57,9 +52,12 @@ public class PastryMailService implements MailService {
         this.mailMessagePastContentFactory = mailMessagePastContentFactory;
         this.address = address;
         topicFactory = new MailNotificationTopicFactoryImpl(mailApplication.getNode().getEnvironment());
+
+        registerToScribe();
     }
 
     protected void registerToScribe() {
+        logger.trace("register to scribe");
         Scribe scribe = mailApplication.getScribe();
         scribe.subscribe(topicFactory.topicFor(address.toString()), new ScribeClient() {
 
@@ -69,7 +67,18 @@ public class PastryMailService implements MailService {
             }
 
             public void deliver(Topic topic, ScribeContent sc) {
-                throw new UnsupportedOperationException("Not supported yet.");
+                logger.trace("deliver " + topic + " " +sc);
+                try{
+                    MailScribeContent mailScribeContent = (MailScribeContent) sc;
+                    synchronized(mailListeners) {
+                        logger.trace("deliver listeners found " + mailListeners.size());
+                        for(NewMailListener listener : mailListeners) {
+                            listener.onMail(mailScribeContent.getMail());
+                        }
+                    }
+                }catch (Exception ex) {
+                    logger.error("error on deliver", ex);
+                }
             }
 
             public void childAdded(Topic topic, NodeHandle nh) {
@@ -84,8 +93,8 @@ public class PastryMailService implements MailService {
         });
     }
 
-    public Future<MailSendingResult> sendEmail(Mail mail) {
-        final MessageAndHeader messageAndHeader = mailMessagePastContentFactory.create(mail);
+    protected Future<MailSendingResult> send(final MessageAndHeader messageAndHeader) {
+
         final MailSendingResult result = new MailSendingResult();
         final FutureResult<MailSendingResult> futureResult = new FutureResult<MailSendingResult>();
         // insert the data
@@ -158,6 +167,18 @@ public class PastryMailService implements MailService {
                 }
             }
         });
+        return futureResult;
+    }
+
+    public Future<MailSendingResult> sendEmail(Mail mail) {
+        final MessageAndHeader messageAndHeader = mailMessagePastContentFactory.create(mail);
+        Future<MailSendingResult> futureResult = send(messageAndHeader);
+
+        logger.info("publishing instant notification");
+        mailApplication.getScribe()
+                .publish(
+                    topicFactory.topicFor(mail.getTo().toString())
+                    , new MailScribeContent(mail));
         return futureResult;
     }
 
@@ -243,7 +264,8 @@ public class PastryMailService implements MailService {
                 logger.trace("reciveMessage  result" + r);
                 try {
                     MailMessagePastContent content = (MailMessagePastContent) r;
-                    continuation.receiveResult(content.getMail());
+                    if(content != null) map.put(content.getMail(), content.getId());
+                    continuation.receiveResult(content == null ? null : content.getMail());
                 } catch (Exception e) {
                     continuation.receiveException(e);
                 }
@@ -260,6 +282,8 @@ public class PastryMailService implements MailService {
         reciveHeaders(new Continuation<Collection<MessageHeader>, Exception>() {
 
             public void receiveResult(Collection<MessageHeader> headers) {
+                logger.trace("reciveResults");
+                logger.trace(headers);
                 final ArrayList<Mail> mails = new ArrayList<Mail>();
                 final Countdown countdown = new Countdown(headers.size(), new Continuation() {
 
@@ -278,7 +302,7 @@ public class PastryMailService implements MailService {
                         public void receiveResult(Mail r) {
                             logger.trace("mail received");
                             synchronized (mails) {
-                                mails.add(r);
+                                if(r!=null)mails.add(r);
                                 countdown.down();
                             }
 
@@ -321,11 +345,20 @@ public class PastryMailService implements MailService {
     }
 
     public void addMailListener(NewMailListener listener) {
-        mailListener.add(listener);
+        synchronized(mailListeners) {
+            mailListeners.add(listener);
+        }
     }
 
     public void removeMailListener(NewMailListener listener) {
-        mailListener.remove(listener);
+        synchronized(mailListeners) {
+            mailListeners.remove(listener);
+        }
+    }
+
+    public void destroy() {
+        this.mailApplication.getScribe().destroy();
+        this.mailApplication.getNode().destroy();
     }
 
 

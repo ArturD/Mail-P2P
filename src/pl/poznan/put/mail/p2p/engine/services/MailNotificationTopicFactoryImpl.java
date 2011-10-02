@@ -25,7 +25,9 @@ public class MailNotificationTopicFactoryImpl implements MailNotificationTopicFa
     }
 
     public Topic topicFor(String address) {
-        return new Topic(new PastryIdFactory(env), "MailNotification_" + address);
+        String topicName = "MailNotification_" + address;
+        logger.trace("creating topic " + topicName);
+        return new Topic(new PastryIdFactory(env), topicName);
     }
 
 }

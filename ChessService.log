@@ -1852,3 +1852,1538 @@ java.io.IOException: Could not join the FreePastry ring.  Reason:rice.pastry.Joi
 1039 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
 1039 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header6from=me@me}, Mail{to=me@meheader=header6from=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header6from=me@me}]
 1039 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header6from=me@me}, Mail{to=me@meheader=header6from=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header6from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+26   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+722  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+762  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+762  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+773  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+15070 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+15071 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+15071 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+15072 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+15072 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+15072 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+15072 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+15073 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+15073 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+15074 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+15242 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+15245 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+15285 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@3fb6101e
+15331 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@236527f
+15331 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+15331 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@3c6210fb
+15331 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+15357 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15359 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15363 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15363 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15367 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15367 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15394 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15394 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15395 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}]
+15395 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+477  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+560  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+572  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+594  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+62758 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+62759 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+62759 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+62760 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+62760 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+62760 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+62761 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+62761 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+62761 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+62762 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+62914 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+62920 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+62968 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@4ab122a1
+63024 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6f0ffb38
+63026 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+63026 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@4a48edb5
+63026 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+63032 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+63032 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+63037 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+63037 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+63065 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+63065 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+63068 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+63068 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+63069 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[null, null]
+63069 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [null, null]
+2    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+11   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+400  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+434  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+434  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+440  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+14734 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+14735 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+14735 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+14735 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+14736 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+14736 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+14736 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+14737 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+14737 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+14740 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+14904 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+14906 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+14961 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@474b5f4a
+15044 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@57ac3379
+15046 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+15048 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6a6779e6
+15048 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+15054 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15055 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15071 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15071 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15077 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15077 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15088 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+15088 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+15089 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[null, null]
+15089 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [null, null]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+10   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+355  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+387  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+387  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+394  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+383  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+432  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+433  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+447  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+643  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+644  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+644  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+644  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+645  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+645  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+645  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+646  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+646  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+646  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+819  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+821  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+900  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@67a5a19
+974  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+975  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7aec6536, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@5ea57edc, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7f938366, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@426c5878, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@12ecd038, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@d8a54d86]
+994  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@12d56b37
+997  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+998  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@7971f189
+1000 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1025 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1027 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+1031 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1031 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+1052 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1052 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+1053 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1053 [Selector Thread -- Default] ERROR pl.poznan.put.mail.p2p.engine.services.PastryMailService  - error! 
+java.lang.NullPointerException
+	at pl.poznan.put.mail.p2p.engine.services.PastryMailService$5.receiveResult(PastryMailService.java:240)
+	at rice.p2p.past.PastImpl$9$1$2.receiveResult(PastImpl.java:829)
+	at rice.Continuation$MultiContinuation.receive(Continuation.java:383)
+	at rice.Continuation$MultiContinuation$1.receiveResult(Continuation.java:362)
+	at rice.Continuation$NamedContinuation.receiveResult(Continuation.java:453)
+	at rice.p2p.past.messaging.ContinuationMessage.returnResponse(ContinuationMessage.java:115)
+	at rice.p2p.past.PastImpl.handleResponse(PastImpl.java:585)
+	at rice.p2p.past.PastImpl.deliver(PastImpl.java:1015)
+	at rice.pastry.commonapi.PastryEndpoint.receiveMessage(PastryEndpoint.java:569)
+	at rice.pastry.standard.StandardRouter.deliverToApplication(StandardRouter.java:516)
+	at rice.pastry.standard.StandardRouter.receiveRouteMessage(StandardRouter.java:275)
+	at rice.pastry.standard.StandardRouter.route(StandardRouter.java:171)
+	at rice.pastry.standard.StandardRouter.receiveMessage(StandardRouter.java:150)
+	at rice.pastry.messaging.MessageDispatch.dispatchMessage(MessageDispatch.java:156)
+	at rice.pastry.PastryNode.receiveMessage(PastryNode.java:472)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:1078)
+	at rice.pastry.PastryNode.messageReceived(PastryNode.java:91)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:248)
+	at org.mpisws.p2p.transport.commonapi.CommonAPITransportLayerImpl.messageReceived(CommonAPITransportLayerImpl.java:65)
+	at org.mpisws.p2p.transport.identity.IdentityImpl$UpperIdentityImpl.messageReceived(IdentityImpl.java:1087)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.done(PriorityTransportLayerImpl.java:1576)
+	at org.mpisws.p2p.transport.priority.PriorityTransportLayerImpl$EntityManager$BufferReader.receiveSelectResult(PriorityTransportLayerImpl.java:1539)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.liveness.LivenessTransportLayerImpl$LSocket.receiveSelectResult(LivenessTransportLayerImpl.java:1088)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.util.SocketWrapperSocket.receiveSelectResult(SocketWrapperSocket.java:140)
+	at org.mpisws.p2p.transport.wire.SocketManager.read(SocketManager.java:328)
+	at rice.selector.SelectorManager.doSelections(SelectorManager.java:413)
+	at rice.selector.SelectorManager.run(SelectorManager.java:266)
+1055 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[null, null]
+1055 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [null, null]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+9    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+447  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+509  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+511  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+530  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+30809 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+30809 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+30809 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+30810 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+30811 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+30812 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+30812 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+30813 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+30814 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+30815 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+30986 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+30989 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+31065 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@1d382926
+31136 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+31140 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7aec6536, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@5ea57edc, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7f938366, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@426c5878, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@d8a54d86, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@12ecd038]
+31184 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@98c5e67
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+396  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+428  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+428  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+434  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+30678 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+30678 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+30679 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+30679 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+30679 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+30680 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+30680 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+30681 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+30682 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+30683 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+30870 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+30876 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+30938 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@2cf18e8e
+30985 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+30987 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7aec6536, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@5ea57edc, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7f938366, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@426c5878, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@12ecd038, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@d8a54d86]
+31002 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@362f0d54
+31004 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+31006 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@4b142196
+31006 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+31022 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+31023 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+31024 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+31025 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+31062 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+31062 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+31064 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+31064 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+31064 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}, null, null, null, null]
+31064 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}, null, null, null, null]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+35   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+534  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+574  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+574  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+580  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+780  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+782  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+782  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+782  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+783  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+783  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+783  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+784  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+785  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+785  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+943  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+1024 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+1177 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@4f2b6c89
+1178 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@26c623af successfully stored at 4 locations.
+1181 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@7e859a68
+1190 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@45490eb5
+1190 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+1220 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+1228 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@34211244, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7aec6536, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@5ea57edc, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7f938366, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@426c5878, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@d8a54d86, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@12ecd038]
+1234 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@26c623af
+1234 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1243 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@670fe2b9
+1243 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1243 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@43ee148b
+1243 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1265 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1266 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1269 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1271 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1274 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1275 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1281 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+1283 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1283 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}]
+1286 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+401  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+440  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+442  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+449  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+681  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+683  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+685  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+686  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+688  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+690  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+692  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+692  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+692  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+693  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+904  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+1935 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+1939 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+2033 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@3a289d2e
+2035 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@b07f45d successfully stored at 4 locations.
+2053 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@42ef83d3
+2054 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+2058 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@7ab7b3f9
+2079 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+2080 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@34211244, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@60675924, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7aec6536, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@5ea57edc, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7f938366, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@426c5878, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@12ecd038, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@d8a54d86]
+2090 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@b07f45d
+2092 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2099 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@62ebcdbb
+2099 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2099 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@670fe2b9
+2099 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2116 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2092dcdb
+2116 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2124 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+2124 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2126 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+2126 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2128 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+2128 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2161 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+2161 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2161 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}]
+2161 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+453  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+490  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+491  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+496  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+701  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+703  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+704  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+706  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+708  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+709  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+711  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+711  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+711  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+712  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+859  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+1884 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+1888 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+1993 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@197200b4
+1994 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@26c623af successfully stored at 4 locations.
+2007 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@30ff94b1
+2010 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+414  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+450  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+450  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+456  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+14711 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+14711 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+14712 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+14712 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+14712 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+14713 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+14713 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+14713 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+14714 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+14714 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+14864 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+24887 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+24891 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+25014 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@49d8c528
+25014 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@3fb6101e successfully stored at 4 locations.
+25018 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@5df4e571
+25018 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+7    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+485  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+520  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+522  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+530  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+748  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+748  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+748  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+749  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+749  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+749  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+750  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+750  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+751  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+751  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+960  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+10995 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+10998 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+11069 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@33682598
+11070 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@1fcef4f7 successfully stored at 4 locations.
+11076 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@341049d3
+11076 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+371  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+406  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+408  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+415  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+30666 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+30667 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+30667 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+30668 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+30668 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+30668 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+30669 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+30669 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+30670 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+30671 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+30827 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+40866 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+40869 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+40959 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@bb273cc
+40963 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6d372656 successfully stored at 4 locations.
+40979 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@654df764
+40980 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+1    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+347  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+379  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+379  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+385  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+637  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+640  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+641  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+641  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+641  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+642  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+642  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+642  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+643  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+643  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+827  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+10852 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+10855 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+10945 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@654df764
+10954 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@42197bb7 successfully stored at 4 locations.
+10960 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@4386d484
+10960 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+376  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+414  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+414  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+421  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+648  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+649  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+649  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+649  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+650  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+650  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+650  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+650  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+651  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+651  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+793  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+797  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+10823 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+10826 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+10901 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@48ff4cf
+10903 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@69d6065 successfully stored at 4 locations.
+10936 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@132789d2
+10938 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+13   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+349  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+388  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+388  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+394  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+625  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+625  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+625  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+626  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+626  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+626  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+627  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+627  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+627  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+628  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+830  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+832  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+833  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+10860 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+10861 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+10868 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+10999 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@235dd910
+11012 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@3d5311bd successfully stored at 4 locations.
+11046 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@c2f8b5a
+11050 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+15   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+815  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+869  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+869  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+876  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+1122 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+1123 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+1123 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+1124 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+1124 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+1124 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+1125 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+1132 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+1132 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+1132 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+1368 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+1390 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+1390 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+11459 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+11461 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+11465 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+11502 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver [TOPIC <0x4219F2..>] pl.poznan.put.mail.p2p.engine.pastry.MailScribeContent@6126f827
+11507 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver listeners found 1
+11515 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - mail notification
+11516 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - Mail{to=me@meheader=hhhfrom=me@me}
+11556 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@d4dd758
+11556 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+11572 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@da0225b
+11575 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@24c0f1ec successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+358  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+416  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+417  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+422  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+8    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+425  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+457  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+458  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+464  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+661  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+661  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+661  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+662  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+662  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+662  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+663  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+663  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+663  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+664  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+827  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+832  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+833  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+10862 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+10863 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+10876 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+11003 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@2be2befa
+11008 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2e00e753 successfully stored at 4 locations.
+11012 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@7e1a9d1b
+11032 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@7cf01771
+11034 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+11036 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+11037 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@34211244, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@dfc56c81, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7aec6536, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@7f938366, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@426c5878, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@d8a54d86, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@2ec72113, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@4106ae20, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@bed3df2c, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@60675924, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@92a34677, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@5ea57edc, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@9fbeb6c2, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@fc12c285, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@9934f58f, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@12ecd038, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@ba56ed68]
+11049 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2e00e753
+11049 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@3c24c4a3
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@11e9c82e
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@b554d32
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11056 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@d3f136e
+11057 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11057 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2814a18d
+11057 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11111 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11111 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11116 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11116 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11121 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11121 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11133 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11134 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11145 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11146 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11147 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11147 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11157 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11158 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11158 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11158 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11159 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11159 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11159 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11159 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11160 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultnull
+11160 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+11160 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-301297151from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}]
+11160 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-301297151from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}, Mail{to=me@meheader=header5from=me@me}, Mail{to=me@meheader=hhhfrom=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+436  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+471  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+473  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+481  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+630  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+630  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+631  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+631  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+631  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+632  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+632  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+633  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+633  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+633  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+799  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+801  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+801  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+819  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+820  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+823  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+886  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@3ff2cea2
+912  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@26c623af successfully stored at 4 locations.
+987  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@4d8ce14a
+1000 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+1000 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@39ed1b0b
+1037 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+1039 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@2a664348, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@ba56ed68]
+1044 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@26c623af
+1046 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1050 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@4934ce4a
+1052 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1054 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-531554798from=me@me}, Mail{to=me@meheader=hhh-301297151from=me@me}]
+1056 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 2
+1056 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-531554798from=me@me}, Mail{to=me@meheader=hhh-301297151from=me@me}]
+1    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+358  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+390  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+390  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+397  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+62569 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+62571 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+62572 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+62574 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+62575 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+62577 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+62578 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+62579 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+62579 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+62579 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+62744 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+62749 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+62749 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+62821 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+62825 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+62827 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+62994 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@5b7b0998
+62997 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@496614e7 successfully stored at 4 locations.
+63007 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@290fd7f6
+63019 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+63060 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@3b3e0aba
+63089 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+63090 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@205325b3, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@2a664348, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@ba56ed68]
+63095 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@496614e7
+63097 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+63101 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@44908881
+63104 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+63105 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6cf1f051
+63105 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+63105 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh35188523from=me@me}, Mail{to=me@meheader=hhh-531554798from=me@me}, Mail{to=me@meheader=hhh-301297151from=me@me}]
+63105 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 3
+63105 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh35188523from=me@me}, Mail{to=me@meheader=hhh-531554798from=me@me}, Mail{to=me@meheader=hhh-301297151from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+411  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+446  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+448  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+453  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+630  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+634  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+634  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+634  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+635  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+635  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+635  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+636  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+636  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+638  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+742  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x37B873..>//192.168.2.104:14079] joined:true
+28785 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+28785 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x37B873..>//192.168.2.104:14079] joined:false
+28790 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+28791 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+28814 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+28815 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+28824 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+28906 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@7ab7b3f9
+28908 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6659fb21 successfully stored at 4 locations.
+28913 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@1fe903d5
+28915 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+28920 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@5076e8a7
+28970 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+28971 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@3102ec32, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@205325b3, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@2a664348, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@ba56ed68]
+28974 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6659fb21
+28975 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+28989 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@649a8a68
+28991 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+28997 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@565c7f6
+28999 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+29004 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@43a6684f
+29006 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+29008 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh1324199653from=me@me}, Mail{to=me@meheader=hhh35188523from=me@me}, Mail{to=me@meheader=hhh-531554798from=me@me}, Mail{to=me@meheader=hhh-301297151from=me@me}]
+29010 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 4
+29010 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh1324199653from=me@me}, Mail{to=me@meheader=hhh35188523from=me@me}, Mail{to=me@meheader=hhh-531554798from=me@me}, Mail{to=me@meheader=hhh-301297151from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+597  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+667  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+667  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+672  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+835  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+836  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+836  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+836  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+837  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+837  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+837  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+838  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+838  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+838  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+839  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x9D258B..>//192.168.2.104:14064] joined:true
+28558 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x9D258B..>//192.168.2.104:14064] joined:false
+30862 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+30866 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+30866 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+40925 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+40925 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+40929 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+40956 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver [TOPIC <0x4219F2..>] pl.poznan.put.mail.p2p.engine.pastry.MailScribeContent@48ff4cf
+40971 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver listeners found 1
+40971 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - mail notification
+40971 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - Mail{to=me@meheader=hhhfrom=me@me}
+41000 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@1018f51f
+41000 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2880cac9 successfully stored at 4 locations.
+41050 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@1389c036
+41050 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+416  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+446  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+447  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+452  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+652  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+652  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+652  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+653  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+653  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+653  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+654  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+654  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+654  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+655  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+791  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+796  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+797  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+10826 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+10826 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+10837 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+10927 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@5421e554
+10927 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@33589e56 successfully stored at 4 locations.
+10932 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@456dfa45
+10932 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+353  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+387  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+388  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+393  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+591  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+591  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+592  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+592  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+592  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+593  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+593  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+593  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+594  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+594  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+768  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+770  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+770  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+775  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - sending mail
+791  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+791  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+799  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+858  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailMessageHeaderListPastContent  - merging headers MailMessageHeaderListPastContent{headers=1}  to  MailMessageHeaderListPastContent{headers=1}
+922  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@70d05c13
+935  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+935  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@3102ec32, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@839dfbc5]
+946  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@35cf7491
+946  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+953  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@5684ce7a
+953  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+956  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@2be2befa
+956  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@3c01d5a0 successfully stored at 4 locations.
+1021 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@45660d6
+1021 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+1021 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh1324199653from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+1021 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 2
+1021 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh1324199653from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+1    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+340  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+371  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+371  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+377  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+1    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+355  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+392  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+393  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+399  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+570  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+570  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+570  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+571  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+571  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+571  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+572  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+572  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+572  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+572  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+739  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+741  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+741  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+745  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - sending mail
+762  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+762  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+766  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+840  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@3ff2cea2
+840  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@7bcd107f successfully stored at 4 locations.
+846  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailMessageHeaderListPastContent  - merging headers MailMessageHeaderListPastContent{headers=1}  to  MailMessageHeaderListPastContent{headers=2}
+900  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@7114460
+900  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+909  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@7e9ffe3f
+953  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+953  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@1f8100ea, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@839dfbc5]
+957  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@7bcd107f
+958  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+967  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@7e859a68
+967  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+967  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+967  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 2
+968  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+4    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+367  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+398  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+398  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+406  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+5    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+481  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+517  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+519  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+525  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+750  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+752  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+754  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+755  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+757  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+758  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+760  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+760  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+760  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+761  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+820  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x9D258B..>//192.168.2.104:14081] joined:true
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+399  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+435  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+435  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+446  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+625  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+625  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+626  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+626  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+626  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+627  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+627  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+627  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+628  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCDF802..>//192.168.2.104:14300] joined:true
+628  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+628  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+818  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+820  [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+820  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+824  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - sending mail
+836  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+837  [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+860  [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+935  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailMessageHeaderListPastContent  - merging headers MailMessageHeaderListPastContent{headers=1}  to  MailMessageHeaderListPastContent{headers=3}
+972  [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@2be2befa
+972  [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2cba5bdb successfully stored at 4 locations.
+1001 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@1309de5b
+1001 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+2929 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@6ce53220
+2953 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+2953 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@1f8100ea, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@a00fa77b, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@839dfbc5]
+2955 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@2cba5bdb
+2955 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2957 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@e5d391d
+2957 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2964 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@dfa6d18
+2965 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+2965 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-1170133910from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+2965 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 3
+2965 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-1170133910from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+371  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+409  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+409  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+416  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+29282 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+29282 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x9D258B..>//192.168.2.104:14081] joined:false
+29288 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+29289 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+29298 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - sending mail
+29319 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+29320 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+29323 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+29363 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@209444d1
+29367 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@366782a9 successfully stored at 4 locations.
+29374 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver [TOPIC <0x4219F2..>] pl.poznan.put.mail.p2p.engine.pastry.MailScribeContent@65efb4be
+29374 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver listeners found 1
+29374 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - mail notification
+29375 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - Mail{to=me@meheader=hhh-1904660988from=me@me}
+29400 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@79038de7
+29405 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+29410 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@585976c2
+29471 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+29471 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@1f8100ea, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@a00fa77b, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@839dfbc5, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@40255b9b]
+29478 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@366782a9
+29478 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+29491 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@540984b
+29491 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+29495 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@538d7ace
+29495 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+29526 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@67ecd78
+29526 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+29526 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-1904660988from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}, Mail{to=me@meheader=hhh-1170133910from=me@me}]
+29526 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 4
+29527 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-1904660988from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}, Mail{to=me@meheader=hhh-1170133910from=me@me}]
+62600 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+62601 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+62601 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+62601 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+62602 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+62602 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+62602 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+62603 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+62603 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCDF802..>//192.168.2.104:14300] joined:true
+62603 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+62603 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+90436 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCDF802..>//192.168.2.104:14300] joined:false
+92625 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+92627 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+92627 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+92637 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - sending mail
+92649 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+92650 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+92651 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+92707 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@73c6641
+92719 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@4b142196 successfully stored at 4 locations.
+92719 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.pastry.MailMessageHeaderListPastContent  - merging headers MailMessageHeaderListPastContent{headers=1}  to  MailMessageHeaderListPastContent{headers=4}
+92725 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver [TOPIC <0x4219F2..>] pl.poznan.put.mail.p2p.engine.pastry.MailScribeContent@3677eaf8
+92725 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver listeners found 1
+92725 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - mail notification
+92725 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - Mail{to=me@meheader=hhh-1505296474from=me@me}
+92749 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@20968fda
+92749 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+92770 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@7cbe41ec
+92809 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+92809 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@1f8100ea, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@a00fa77b, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@8e0d4277, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@839dfbc5, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@40255b9b]
+92811 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@4b142196
+92811 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+92820 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@7eb05acd
+92820 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+92820 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6c1989b5
+92820 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+92829 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6c3c9c31
+92829 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+92833 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@38aa233f
+92833 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+92834 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-1505296474from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh-1170133910from=me@me}, Mail{to=me@meheader=hhh-1904660988from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+92834 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 5
+92834 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-1505296474from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh-1170133910from=me@me}, Mail{to=me@meheader=hhh-1904660988from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - Id seed : me@me14239
+5194 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+5619 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+5664 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+5666 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+5680 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+5918 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x91688A..>//192.168.2.104:9003] joined:true
+5920 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x16C0D4..>//192.168.2.104:9006] joined:true
+5920 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE724CE..>//192.168.2.104:9007] joined:true
+5921 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x9D258B..>//192.168.2.104:14048] joined:true
+5921 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x258A73..>//192.168.2.104:9009] joined:true
+5921 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xF03F49..>//192.168.2.104:9005] joined:true
+5929 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE005DF..>//192.168.2.104:9004] joined:true
+5929 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCA41B4..>//192.168.2.104:9008] joined:true
+5934 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xE2F0E1..>//192.168.2.104:9002] joined:true
+5935 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCDF802..>//192.168.2.104:14300] joined:true
+5935 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xFED1E8..>//192.168.2.104:9000] joined:true
+5936 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x71ACAE..>//192.168.2.104:9001] joined:true
+33947 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0x9D258B..>//192.168.2.104:14048] joined:false
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+327  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+361  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+361  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+368  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+61578 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - [SNH: <0xCDF802..>//192.168.2.104:14300] joined:false
+65973 [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - joined pastry
+65981 [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - register to scribe
+65986 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+65991 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - sending mail
+66006 [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - publishing instant notification
+66008 [main] TRACE pl.poznan.put.mail.p2p.engine.services.MailNotificationTopicFactoryImpl  - creating topic MailNotification_me@me
+66015 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - query for mails
+66074 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver [TOPIC <0x4219F2..>] pl.poznan.put.mail.p2p.engine.pastry.MailScribeContent@55443800
+66077 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - deliver listeners found 1
+66078 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - mail notification
+66078 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.Main  - Mail{to=me@meheader=hhh-1935890648from=me@me}
+66147 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert mail [Ljava.lang.Boolean;@50d8a1a0
+66148 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - pl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6b98e8b4 successfully stored at 4 locations.
+66161 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - insert receiveResult [Ljava.lang.Boolean;@5aaefcbb
+66162 [Selector Thread -- Default] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailService  - MailMessageHeaderListPastContent{headers=1} successfully stored at 4 locations.
+66182 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - received handle[Lrice.p2p.past.PastContentHandle;@5fa13338
+66206 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveResults
+66206 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - [pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@1f8100ea, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@a00fa77b, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@8e0d4277, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@839dfbc5, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@40255b9b, pl.poznan.put.mail.p2p.engine.pastry.MessageHeader@1d541477]
+66220 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@6b98e8b4
+69364 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+69385 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@41e80761
+72842 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+72856 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@15db4492
+72858 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+72862 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@60e2fbeb
+72864 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+72874 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@50dfc362
+72876 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+72893 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - reciveMessage  resultpl.poznan.put.mail.p2p.engine.pastry.MailMessagePastContent@48f3d27
+72895 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - mail received
+72896 [Selector Thread -- Default] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailService  - recive Mail collection[Mail{to=me@meheader=hhh-1935890648from=me@me}, Mail{to=me@meheader=hhh-1170133910from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}, Mail{to=me@meheader=hhh-1505296474from=me@me}, Mail{to=me@meheader=hhh-1904660988from=me@me}]
+72898 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - got 6
+72898 [main] INFO  pl.poznan.put.mail.p2p.engine.Main  - [Mail{to=me@meheader=hhh-1935890648from=me@me}, Mail{to=me@meheader=hhh-1170133910from=me@me}, Mail{to=me@meheader=hhh-1717770090from=me@me}, Mail{to=me@meheader=hhh1286794161from=me@me}, Mail{to=me@meheader=hhh-1505296474from=me@me}, Mail{to=me@meheader=hhh-1904660988from=me@me}]
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+3    [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - Id seed : me@me14177
+6    [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+352  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+384  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+385  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+390  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry
+0    [main] TRACE pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - creating MailService
+13   [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - Id seed : me@me14376
+16   [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - factoring mail application
+346  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - creating Past
+380  [main] INFO  pl.poznan.put.mail.p2p.engine.services.PastryMailServiceFactory  - booting/192.168.2.104:9001
+380  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - boot /192.168.2.104:9001
+386  [main] TRACE pl.poznan.put.mail.p2p.engine.pastry.MailApplication  - waiting to join pastry

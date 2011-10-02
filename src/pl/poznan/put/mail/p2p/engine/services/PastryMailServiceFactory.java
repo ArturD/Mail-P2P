@@ -31,7 +31,7 @@ public class PastryMailServiceFactory {
     private static final Logger logger = LogManager.getLogger(PastryMailServiceFactory.class);
     private final MailApplicationFactory mailApplicationFactory = new MailApplicationFactory();
     private InetSocketAddress bootAddress;
-    private int port = 14000 + new Random().nextInt(100);
+    private int port = 14000 + new Random().nextInt(1000);
     private MailAddress mailAddress;
     private final MailMessagePastContentFactory mailMessagePastContentFactory;
 
@@ -47,7 +47,7 @@ public class PastryMailServiceFactory {
         MailApplication app;
         try {
             
-            app = mailApplicationFactory.createApplication(bootAddress, port, generateNodeId(mailAddress));
+            app = mailApplicationFactory.createApplication(bootAddress, port, generateNodeId(mailAddress.toString() + port));
             logger.info("booting" + bootAddress);
             app.boot(bootAddress);
             app.waitForConnection();
@@ -61,7 +61,8 @@ public class PastryMailServiceFactory {
         return new PastryMailService(app, mailMessagePastContentFactory, mailAddress);
     }
 
-    protected Id generateNodeId(MailAddress mailAddress) {
+    protected Id generateNodeId(String seed) {
+        logger.info("Id seed : " + seed);
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA");
@@ -71,7 +72,7 @@ public class PastryMailServiceFactory {
         }
 
 
-        md.update(mailAddress.toString().getBytes());
+        md.update(seed.getBytes());
         byte[] digest = md.digest();
 
         Id nodeId = Id.build(digest);

@@ -28,4 +28,6 @@ public interface MailService {
     void addMailListener(NewMailListener listener);
 
     void removeMailListener(NewMailListener listener);
+
+    public void destroy();
 }

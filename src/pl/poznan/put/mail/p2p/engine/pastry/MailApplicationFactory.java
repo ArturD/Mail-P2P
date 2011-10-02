@@ -69,10 +69,10 @@ public class MailApplicationFactory {
               new MemoryStorage(idf), 512 * 1024, node.getEnvironment())), 3, "");
 
 
-        Scribe scribe = new ScribeImpl(node,"p2pMail.ScribeInstance");
+        
 
         // construct a new MyApp
-        MailApplication app = new MailApplication(node, env, past, scribe);
+        MailApplication app = new MailApplication(node, env, past);
 
 
         return app;

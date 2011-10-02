@@ -56,6 +56,7 @@ import rice.p2p.commonapi.NodeHandle;
 import rice.p2p.commonapi.RouteMessage;
 import rice.p2p.past.Past;
 import rice.p2p.scribe.Scribe;
+import rice.p2p.scribe.ScribeImpl;
 import rice.pastry.NodeIdFactory;
 import rice.pastry.PastryNode;
 import rice.pastry.leafset.LeafSet;
@@ -75,17 +76,14 @@ public class MailApplication implements Application {
     private final Past past;
     private final Scribe scribe;
 
-    public MailApplication(PastryNode node, Environment env, Past past, Scribe scribe) {
-        // We are only going to use one instance of this application on each PastryNode
+    public MailApplication(PastryNode node, Environment env, Past past) {
         this.node = node;
         this.env = env;
         this.past = past;
 
-        // the rest of the initialization code could go here
-
         this.endpoint = node.buildEndpoint(this, "myinstance");
-        // now we can receive messages
-        this.scribe = scribe;
+
+        this.scribe = new ScribeImpl(node,"p2pMail.ScribeInstance");
         this.endpoint.register();
     }
 

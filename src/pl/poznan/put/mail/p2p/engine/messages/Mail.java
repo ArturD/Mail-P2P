@@ -94,28 +94,14 @@ public class Mail implements Serializable {
         if ((this.content == null) ? (other.content != null) : !this.content.equals(other.content)) {
             return false;
         }
-        if (this.timestamp != other.timestamp && (this.timestamp == null || !this.timestamp.equals(other.timestamp))) {
-            return false;
-        }
-        if (this.from != other.from && (this.from == null || !this.from.equals(other.from))) {
-            return false;
-        }
-        if (this.to != other.to && (this.to == null || !this.to.equals(other.to))) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + (this.header != null ? this.header.hashCode() : 0);
-        hash = 89 * hash + (this.content != null ? this.content.hashCode() : 0);
-        hash = 89 * hash + (this.timestamp != null ? this.timestamp.hashCode() : 0);
-        hash = 89 * hash + (this.from != null ? this.from.hashCode() : 0);
-        hash = 89 * hash + (this.to != null ? this.to.hashCode() : 0);
+        int hash = 5;
+        hash = 59 * hash + (this.header != null ? this.header.hashCode() : 0);
+        hash = 59 * hash + (this.content != null ? this.content.hashCode() : 0);
         return hash;
     }
-
-
 }
